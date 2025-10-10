@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         FRONTEND_REPO = 'https://github.com/yourusername/frontend-repo.git'
-        CYPRESS_REPO = 'https://github.com/yourusername/cypress-tests.git'
+        CYPRESS_REPO = 'https://github.com/SabeehNoshad/hotelManagmentcypress.git'
         FRONTEND_DIR = 'frontend'
         CYPRESS_DIR = 'cypress'
         FRONTEND_PORT = '3000'
@@ -22,7 +22,7 @@ pipeline {
         stage('Install Frontend Dependencies') {
             steps {
                 dir("${FRONTEND_DIR}") {
-                    bat 'npm install'  // use 'sh' instead if Linux
+                    bat 'npm install'  
                 }
             }
         }
@@ -33,7 +33,7 @@ pipeline {
                     echo 'Starting frontend server in background...'
                     bat 'start /B cmd /C "npm start"'
                     // Wait for app to boot
-                    sleep(time: 20, unit: 'SECONDS')
+                    sleep(time: 50, unit: 'SECONDS')
                 }
             }
         }

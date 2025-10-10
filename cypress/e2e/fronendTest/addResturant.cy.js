@@ -1,6 +1,7 @@
 const { login } = require("../helperMethods/login")
 import 'cypress-real-events/support';
 import { addResturant } from '../helperMethods/add resturant function';
+const {randomName,randomText,trimmedText} =require ("../helperMethods/documentGenerator")
 
 
 describe('adding a  resturant ', () => { 
@@ -60,14 +61,14 @@ it('add the resutrant sucessfully',()=>{
     .should('be.visible')
     .click();
     addResturant({
-        name: 'resturant ABC',
+        name: randomName,
         country : 'Pakistan',
         City : 'Karachi',
-        address : 'block 13 25 B street 909 karachi defence block 9 sindh paskitan',
+        address : randomText,
         phoneNumber : '+1654961461564984',
         email : 'sadasdasd@dsf.com',
         currency : 'usd',
-        description : 'nsdajknfioasnfdjlasd sdfajkshifuojasdhfiaossajfosdafipojasp sadojfopiasdjfijasdoipfja sdfasd sdfajoasdjfoipsdajiofjsadoijf sadfjoipasdjfoijsda'
+        description : trimmedText
     })
     cy.get("button[type='submit'] span").scrollIntoView().click();
   //  cy.get("ant-message ant-message-top css-dev-only-do-not-override-1vjf2v5").should('contain.text','Resturant added sucessfull')
@@ -130,14 +131,14 @@ it('add the resutrant sucessfully',()=>{
     .should('be.visible')
     .click();
     addResturant({
-        name: 'resturant ABC',
+        name: randomName,
         country : 'Pakistan',
         City : 'Karachi',
-        address : 'block 13 25 B street 909 karachi defence block 9 sindh paskitan',
+        address : randomText,
         phoneNumber : '+1sadfdsfasdfasd',
         email : 'sadasdasd',
         currency : 'usd',
-        description : 'nsdajknfioasnfdjlasd sdfajkshifuojasdhfiaossajfosdafipojasp sadojfopiasdjfijasdoipfja sdfasd sdfajoasdjfoipsdajiofjsadoijf sadfjoipasdjfoijsda'
+        description : trimmedText
     })
     cy.get("button[type='submit'] span").scrollIntoView().click();
   //  cy.get("ant-message ant-message-top css-dev-only-do-not-override-1vjf2v5").should('contain.text','Resturant added sucessfull')
@@ -162,14 +163,14 @@ it('add the resutrant sucessfully',()=>{
     .should('be.visible')
     .click();
     addResturant({
-        name: 'resturant ABC',
+        name: trimmedText,
         country : 'Pakistan',
         City : 'Karachi',
-        address : 'block 13 25 B street 909 karachi defence block 9 sindh paskitan',
+        address : randomText,
         phoneNumber : '+1sadfdsfasdfasd',
         email : 'sadasdasd@sadasd',
         currency : 'usd',
-        description : 'nsdajknfioasnfdjlasd sdfajkshifuojasdhfiaossajfosdafipojasp sadojfopiasdjfijasdoipfja sdfasd sdfajoasdjfoipsdajiofjsadoijf sadfjoipasdjfoijsda'
+        description : trimmedText
     })
     cy.get("button[type='submit'] span").scrollIntoView().click();
   //  cy.get("ant-message ant-message-top css-dev-only-do-not-override-1vjf2v5").should('contain.text','Resturant added sucessfull')
@@ -190,14 +191,14 @@ it('add the resutrant sucessfully',()=>{
     .should('be.visible')
     .click();
     addResturant({
-        name: 'resturant ABC',
+        name: randomName,
         country : 'Pakistan',
         City : 'Karachi',
-        address : 'block 13 25 B street 909 karachi defence block 9 sindh paskitan',
+        address : randomText,
         phoneNumber : '+1',
         email : 'sadasdasd@fdascom',
         currency : 'usd',
-        description : 'nsdajknfioasnfdjlasd sdfajkshifuojasdhfiaossajfosdafipojasp sadojfopiasdjfijasdoipfja sdfasd sdfajoasdjfoipsdajiofjsadoijf sadfjoipasdjfoijsda'
+        description : trimmedText
     })
     cy.get("button[type='submit'] span").scrollIntoView().click();
   //  cy.get("ant-message ant-message-top css-dev-only-do-not-override-1vjf2v5").should('contain.text','Resturant added sucessfull')
@@ -222,14 +223,14 @@ it('add the resutrant sucessfully',()=>{
     .should('be.visible')
     .click();
     addResturant({
-        name: 'resturant ABC',
+        name: randomName,
         country : 'Pakistan',
         City : 'Karachi',
-        address : 'block 13 25 B street 909 karachi defence block 9 sindh paskitan',
+        address : randomText,
         phoneNumber : 'dsgdfgdf',
         email : 'sadasdasd@fdas.com',
         currency : 'usd',
-        description : 'nsdajknfioasnfdjlasd sdfajkshifuojasdhfiaossajfosdafipojasp sadojfopiasdjfijasdoipfja sdfasd sdfajoasdjfoipsdajiofjsadoijf sadfjoipasdjfoijsda'
+        description : trimmedText
     })
     cy.get("button[type='submit'] span").scrollIntoView().click();
   //  cy.get("ant-message ant-message-top css-dev-only-do-not-override-1vjf2v5").should('contain.text','Resturant added sucessfull')
@@ -305,7 +306,7 @@ it('add the resutrant sucessfully',()=>{
   
     cy.get('body > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > main:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > ul:nth-child(3) > li:nth-child(1) > span:nth-child(1) > button:nth-child(1) > span:nth-child(2)')
     .first().realHover().click();
-    cy.get('#name').clear().type('new name')
+    cy.get('#name').clear().type(randomName)
     cy.get("button[type='submit'] span").scrollIntoView().click();
     })
 

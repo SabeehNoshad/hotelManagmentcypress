@@ -9,4 +9,4 @@ const randomDesc = faker.company.buzzPhrase();
 const randomSubject = faker.lorem.paragraph(5)
 const trimSubject = randomSubject.substring(0,25)
 
-module.exports = {trimmedText,randomName,randomDateSimple,randomText}
+module.exports = {trimmedText,randomName,randomText}

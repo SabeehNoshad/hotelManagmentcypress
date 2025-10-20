@@ -1,3 +1,5 @@
+const { get } = require("lodash");
+
 // for crash test routing and verification 
 function routing(params){
     if (params && params.route && params.route.length > 0){
@@ -27,9 +29,24 @@ function addTax(params){
     cy.get("#percentage").type(params.percentage);
 
 }
+// adding menu category
 function addCategory(params){
     cy.get("#categoryNumber").type(params.catnumber)
     cy.get('#categoryName').type(params.catName);
     cy.get("#categorySequence").type(params.catSeq)
 }
-module.exports = {routing,addUser,addTax,addCategory}
+// adding menu items
+function addMenuItem(params){
+cy.get("#name").type(params.name)
+cy.get("#categoryId").click()
+cy.get("div[class='ant-select-item ant-select-item-option ant-select-item-option-active'] div[class='ant-select-item-option-content']").click()
+cy.get("#description").type(params.description)
+cy/get("#price").type(params.price)
+//ingredients
+params.ingredient.forEach(ingredient => {
+        cy.get("input[placeholder='Enter ingredient name']")
+        .type(`${ingredient}{enter}`);
+    })
+
+}
+module.exports = {routing,addUser,addTax,addCategory,addMenuItem}

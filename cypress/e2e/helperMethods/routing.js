@@ -12,4 +12,8 @@ function routing(params){
         });
     }
 }
-module.exports = {routing}
+function addUser(params){
+    cy.get("#name").type(params.firstName);
+    cy.get('#email').type(params.email + "@gmail.com")
+}
+module.exports = {routing,addUser}
